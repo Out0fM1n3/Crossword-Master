@@ -1,0 +1,30 @@
+﻿<Window x:Class="Crossword_Master.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crossword_Master"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="480" MinWidth="820">
+    <Grid x:Name="MainGrid" ShowGridLines="True" Height="Auto" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="GameGrid" Height="Auto" Width="Auto"/>
+        <Grid x:Name="SecondGrid" Grid.Column="1" Width="Auto" Height="Auto">
+            <StackPanel x:Name="SecondStackPanel">
+                <TextBlock x:Name="lbl1" TextWrapping="Wrap" Width="Auto">
+            <Run Text="Введите " /><Run Language="ru-ru" Text="вопросы" /><Run Text=" для игры. Через запятую, " /><Run Language="ru-ru" Text="а ответ через дефис" />
+                </TextBlock>
+                <TextBox x:Name ="QuestionDictionary_TextBox" TextWrapping="Wrap" Text="" Width="Auto" />
+                <Button x:Name="CheckButton" Content="Check" Width="Auto" Click="CheckButton_Click"/>
+                <Button x:Name="PlayBtn" Content="Game" Width="Auto" Click="PlayBtn_Click"/>
+                <TextBlock x:Name="lbl2" TextWrapping="Wrap" Width="380">
+            <Run Text="Введите " /><Run Language="ru-ru" Text="ответы"/><Run Text=" для игры. Через запятую"/>
+                </TextBlock>
+                <TextBox x:Name="AnswerDictionary_TextBox" Width="Auto" Height="38" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Text=""/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
